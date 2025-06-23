@@ -2,11 +2,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="Sharpie.App"
              xmlns:local="using:Sharpie"
+             xmlns:vm="clr-namespace:Sharpie.ViewModels"
+             xmlns:views="clr-namespace:Sharpie.Views"
              RequestedThemeVariant="Default">
              <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
     <Application.DataTemplates>
         <local:ViewLocator/>
+        
+        
+        <DataTemplate DataType="vm:EditorWindowViewModel">
+            <views:EditorWindowView/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="vm:StartWindowViewModel">
+            <views:StartWindowView/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="vm:FileCreationViewModel">
+            <views:FileCreationWindow/>
+        </DataTemplate>
+        
     </Application.DataTemplates>
   
     <Application.Styles>
